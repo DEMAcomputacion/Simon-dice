@@ -8,6 +8,7 @@ let nroRonda;
 let nroClick = 1;
 let intervaloId;
 let idSecuencia = 1;
+let relojJuego = 1000;
 
 sonido1.src = "verde.mp3";
 sonido2.src = "rojo.mp3";
@@ -23,6 +24,8 @@ const $boton3 = document.querySelector("#btnAzul");
 const $boton4 = document.querySelector("#btnAmarillo");
 const $botonStart = document.querySelector("#btnStart");
 const $tituloRonda = document.querySelector("#tituloRonda");
+const $divSwitchDificultad = document.querySelector("#divSwitchDificultad");
+const $botonSwitchDificultad = document.querySelector("#switch-label");
 
 
 const botones = {
@@ -39,17 +42,17 @@ const sonidos = {
     4: sonido4
 }
 
-function time(espera_segundos) {
-    espera = espera_segundos * 1000
-    const tiempo_inicio = Date.now();
-    let tiempo_actual= null;
-    do {
-      tiempo_actual= Date.now();
-    } while (tiempo_actual - tiempo_inicio < espera);
-}
-
 function generaRandom(){
     return Math.floor((Math.random() * 4) + 1);
+}
+
+$botonSwitchDificultad.onclick = function seleccionaDificultad() {
+    if ($botonSwitchDificultad.checked == true){
+        relojJuego = 500;
+    } else {
+        relojJuego = 1000;
+    }
+    console.log(relojJuego);
 }
 
 $botonStart.onclick = function(){
@@ -60,9 +63,10 @@ $botonStart.onclick = function(){
     $tituloRonda.innerText = "Ronda:";
     $tableroRonda.className = "score";
     $tableroRonda.innerText = nroRonda;
+    $divSwitchDificultad.className = "switch-button";
     $turnos.innerText = "Memoriza Esto!!!";
     Object.keys(botones).forEach(function(key){botones[key].disabled = false});
-    window.setTimeout(rondaPc, 1000);
+    window.setTimeout(rondaPc, relojJuego);
 }
 
 function desablitarStart(){
@@ -78,11 +82,11 @@ function rondaPc(){
         secuencia[nroRonda] = random;
         reproduceSecuencia();
         $tableroRonda.innerText = nroRonda;
-        window.setTimeout(rondaUsuario, 1000, secuencia);
+        window.setTimeout(rondaUsuario, relojJuego, secuencia);
 }
 
 function reproduceSecuencia(){
-        intervaloId = window.setInterval(leeSecuencia, 700)
+        intervaloId = window.setInterval(leeSecuencia, (relojJuego*0.7));
 }
 
 function leeSecuencia(){
@@ -92,7 +96,7 @@ function leeSecuencia(){
         reproducir.play();
         const botonActual = botones[key];
         botonActual.className = `boton${key}Brilla`;
-        window.setTimeout(borraBrillo, 200,key, botonActual)
+        window.setTimeout(borraBrillo, (relojJuego*0.2),key, botonActual)
         idSecuencia ++;
     }else{
     clearInterval(intervaloId);
@@ -135,7 +139,7 @@ function chequeaGame(botonActual){
             $turnos.innerText = "Memoriza Esto!!!";
             nroRonda ++;
             nroClick ++;
-            return window.setTimeout(rondaPc, 2000), nroClick;
+            return window.setTimeout(rondaPc, (relojJuego*1.6)), nroClick;
         }else{
             nroClick ++;
             return nroClick;
@@ -151,8 +155,9 @@ function gameOver(){
     secuencia = {};
     document.querySelector("#body").className = "gradienteGameOver";
     $tableroRonda.className = "oculto";
+    $divSwitchDificultad.className = "oculto";
     $tituloRonda.innerText = `Alcanzaste\n${nroRonda}\nrondas`;
-    habilitarStart();
     Object.keys(botones).forEach(function(key){botones[key].disabled = true});
     nroRonda = 1;
+    habilitarStart();
 }

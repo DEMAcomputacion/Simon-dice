@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Simon dice / David Morales</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200&family=Rubik+Moonrocks&family=Tourney:wght@100&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='estilos.css'>
+
+</head>
+<body id="body" class="gradiente">
+
+    <div>
+        <center><h1>Simon dice</h1>
+        <h2 id="turnos">Presiona Start para empezar</h2></center>
+    </div>
+
+<div id="contenedor">
+<div id="col_izq">  
+    <center>
+        <h2 id="tituloRonda" class="oculto">Ronda:</h2>
+        <label id="nroRonda" class="score"></label>
+    </center>
+</div>
+    <div id="col_cen">
+        <table>
+            <tr class="trBtn">
+                <td class="tdBtn"><button id="btnVerde" class="boton1"></button></td>
+                <td class="tdBtn"><button id="btnRojo" class="boton2"></button></td>
+            </tr>
+            <tr class="trBtn">
+                <td class="tdBtn"><button id="btnAzul" class="boton3"></button></td>
+                <td class="tdBtn"><button id="btnAmarillo" class="boton4"></button></td>
+            </tr>
+            <tr><td COLSPAN="2"><center><button id="btnStart" class="botonStart">START</button></center></td></tr>
+        </table>
+
+    </div>
+</div>
+
+
+
+
+
+    <script src='index.js'></script>
+</body>
+</html>

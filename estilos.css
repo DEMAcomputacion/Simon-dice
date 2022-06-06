@@ -1,0 +1,206 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+.gradiente {
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+
+.gradienteGameOver{
+    background: #EB3349;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+html, body {
+    background-color: rgb(255, 223, 236);
+    width: 100%;
+    height: 100%;
+}
+
+#contenedor {
+    width: 100%;
+    height: 100%;
+}
+
+.oculto {
+    display: none;
+}
+
+#col_der, #col_izq, #col_cen {
+    height: 100%;
+}
+
+#col_izq {
+    float: left;
+    width: 30%;
+    font-family: 'Oxanium', cursive;
+    font-size: 2rem;
+}
+
+#col_cen {
+    width: 30%;
+}
+
+.score {
+    font-family: 'Tourney', cursive;
+    font-size: 4rem;
+}
+
+td {
+    width: auto;
+}
+
+h1 {
+    font-family: 'Rubik Moonrocks', cursive;
+    font-size: 5rem;
+
+}
+
+h2 {
+    font-family: 'Oxanium', cursive;
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+div {
+    width: 30%;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+table {
+    border: 1px;
+    border-color: #640b06;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.trBtn {
+    border: 0px;
+    width: 200px;
+    height:200px
+}
+
+.tdBtn {
+    border: 0px;
+    width: 200px;
+    height:200px
+}
+
+.botonStart {
+    font-family: 'Rubik Moonrocks', cursive;
+    color:rgb(255, 255, 255);
+    font-size: 2rem;
+    margin-top: 2rem;
+    background:#1b1d1b;
+    border-radius: 50px 50px 50px 50px;
+    width:300px;
+    height:50px
+}
+
+.botonStart:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.boton1 {
+    background:#4bb153;
+    border: 4px solid #0b7113;
+    border-radius: 130px 0px 0px 0px;
+    width:200px;
+    height:200px
+}
+
+.boton2 {
+    background:#c41d25;
+    border: 4px solid #640b06;
+    border-radius: 0px 130px 0px 0px;
+    width:200px;
+    height:200px
+}
+
+.boton3 {
+    background:#4071a1;
+    border: 4px solid #104171;
+    border-radius: 0px 0px 0px 130px;
+    width:200px;
+    height:200px
+}
+
+.boton4 {
+    background:#e8eb4c;
+    border: 4px solid #989b0c;
+    border-radius: 0px 0px 130px 0px;
+    width:200px;
+    height:200px
+}
+
+.boton1:active {
+    background:#6bd173;
+    border: 4px solid #6bd173;
+    border-radius: 130px 0px 0px 0px;
+    width:200px;
+    height:200px
+}
+
+.boton2:active {
+    background:#e43d45;
+    border: 4px solid #e43d45;
+    border-radius: 0px 130px 0px 0px;
+    width:200px;
+    height:200px
+}
+
+.boton3:active {
+    background:#6091c1;
+    border: 4px solid #6091c1;
+    border-radius: 0px 0px 0px 130px;
+    width:200px;
+    height:200px
+}
+
+.boton4:active {
+    background:#ffff6a;
+    border:4px solid #ffff6a;
+    border-radius: 0px 0px 130px 0px;
+    width:200px;
+    height:200px
+}
+
+.boton1Brilla {
+    background:#6bd173;
+    border: 4px solid #6bd173;
+    border-radius: 130px 0px 0px 0px;
+    width:200px;
+    height:200px
+}
+
+.boton2Brilla {
+    background:#e43d45;
+    border: 4px solid #e43d45;
+    border-radius: 0px 130px 0px 0px;
+    width:200px;
+    height:200px
+}
+
+.boton3Brilla {
+    background:#6091c1;
+    border: 4px solid #6091c1;
+    border-radius: 0px 0px 0px 130px;
+    width:200px;
+    height:200px
+}
+
+.boton4Brilla {
+    background:#ffff6a;
+    border:4px solid #ffff6a;
+    border-radius: 0px 0px 130px 0px;
+    width:200px;
+    height:200px
+}
